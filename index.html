@@ -3,533 +3,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Utkarsh Priyam - Developer Portfolio</title>
+    <title>Utkarsh Priyam - Full Stack & AI Engineer</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #0a0a0b;
-            color: #e0e0e0;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* HERO SECTION */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 80px 20px 40px;
-            position: relative;
-            background: linear-gradient(135deg, #121212 0%, #0d0d14 50%, #080808 100%);
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 8px 24px;
-            background: rgba(56, 189, 248, 0.15);
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            border-radius: 100px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 800;
-            background: linear-gradient(to bottom, #fff, #c0c0d0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 16px;
-        }
-
-        .hero-title {
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            font-weight: 300;
-            color: #ffffff;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: #888;
-            max-width: 500px;
-            margin: 0 auto 36px;
-        }
-
-        .btn-view {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 14px 32px;
-            background: linear-gradient(135deg, #00d4ff, #0066ff);
-            color: #000;
-            border: none;
-            border-radius: 100px;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.25);
-        }
-
-        .btn-view:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.4);
-            background: linear-gradient(135deg, #00b8d4, #0099cc);
-        }
-
-        .btn-view svg {
-            width: 18px;
-            height: 18px;
-            transition: transform 0.3s;
-        }
-
-        .hero-cta {
-            margin-top: 28px;
-            padding: 14px 40px;
-            background: transparent;
-            color: #fff;
-            border: 2px solid #00d4ff;
-            border-radius: 100px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .hero-cta:hover {
-            background: #00d4ff;
-            color: #000;
-            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.4);
-        }
-
-        /* PROJECTS SECTION */
-        .projects-section {
-            padding: 100px 20px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-        }
-
-        .project-card {
-            background: #161616;
-            border: 1px solid #252540;
-            border-radius: 16px;
-            padding: 28px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            border-color: #00d4ff;
-            box-shadow: 0 12px 40px rgba(0, 212, 255, 0.15);
-        }
-
-        .project-card:hover .card-icon {
-            transform: scale(1.1);
-        }
-
-        .card-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 18px;
-            font-size: 1.4rem;
-        }
-
-        .project-info h3 {
-            font-size: 1.1rem;
-            color: #e0e0e0;
-            margin-bottom: 8px;
-        }
-
-        .project-info p {
-            font-size: 0.95rem;
-            color: #999;
-            line-height: 1.5;
-        }
-
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 16px;
-        }
-
-        .tech-tag {
-            background: #1e1e23;
-            border: 1px solid #2a2a35;
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 0.75rem;
-            color: #aaa;
-            transition: all 0.3s;
-        }
-
-        .tech-tag:hover {
-            background: #333;
-            border-color: #00d4ff;
-            color: #00d4ff;
-        }
-
-        /* SKILLS SECTION */
-        .skills-section {
-            padding: 100px 20px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 24px;
-        }
-
-        .skill-item {
-            text-align: center;
-            padding: 24px 16px;
-            background: #1a1a22;
-            border: 1px solid #2a2a35;
-            border-radius: 12px;
-            transition: all 0.3s;
-        }
-
-        .skill-item:hover {
-            transform: translateY(-4px);
-            border-color: #00d4ff;
-        }
-
-        .skill-category {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #00d4ff;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .skill-item h3 {
-            font-size: 0.95rem;
-            color: #e0e0e0;
-            margin-bottom: 10px;
-        }
-
-        .skill-item p {
-            font-size: 0.85rem;
-            color: #666;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            background: #0a0a0b;
-            color: #00d4ff;
-        }
-
-        /* CONTACT SECTION */
-        .contact-section {
-            padding: 100px 20px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-
-        .contact-info {
-            background: #161616;
-            border-radius: 16px;
-            padding: 40px;
-            border: 1px solid #252540;
-        }
-
-        .contact-info h2 {
-            font-size: 1.8rem;
-            color: #e0e0e0;
-            margin-bottom: 24px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 16px;
-            margin-top: 24px;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            background: #1a1a22;
-            border: 1px solid #2a2a35;
-            border-radius: 100px;
-            color: #e0e0e0;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .social-link:hover {
-            background: #00d4ff;
-            color: #000;
-            border-color: #00d4ff;
-        }
-
-        .email-form {
-            background: #161616;
-            border-radius: 16px;
-            padding: 40px;
-            border: 1px solid #252540;
-        }
-
-        .email-form h3 {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            color: #e0e0e0;
-        }
-
-        .form-group {
-            margin-bottom: 16px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.8rem;
-            color: #888;
-            margin-bottom: 6px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 16px;
-            background: #0a0a0b;
-            border: 1px solid #2a2a35;
-            border-radius: 8px;
-            color: #e0e0e0;
-            font-size: 0.95rem;
-            outline: none;
-            transition: border-color 0.3s;
-            font-family: inherit;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: #00d4ff;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 14px;
-            background: linear-gradient(135deg, #00d4ff, #0066ff);
-            color: #000;
-            border: none;
-            border-radius: 100px;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0, 212, 255, 0.4);
-        }
-
-        /* FOOTER */
-        .footer {
-            padding: 40px 20px;
-            text-align: center;
-            color: #555;
-            font-size: 0.9rem;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .hero {
-                padding: 60px 20px 30px;
-            }
-
-            .projects-grid,
-            .skills-grid,
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-info {
-                padding: 24px;
-            }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Segoe UI", system-ui, -apple-system, sans-serif; background-color: #0b0c10; color: #f0f0f0; line-height: 1.6; overflow-x: hidden; }
+        .header { position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); background: rgba(11, 12, 16, 0.85); border-bottom: 1px solid #1a1a2e; }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 20px 30px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: 3px; background: linear-gradient(135deg, #00d4ff, #e600ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { color: #888; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: #00d4ff; }
+        .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 100px 20px 60px; background: linear-gradient(135deg, #121212 0%, #0d0d14 50%, #080808 100%); }
+        .hero-badge { display: inline-flex; align-items: center; gap: 12px; padding: 8px 24px; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 100px; font-size: 0.85rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; animation: fadeInUp 0.8s ease-out; }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; background: linear-gradient(to bottom, #fff, #c0c0d0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 20px; }
+        .hero-subtitle { font-size: 1.2rem; color: #888; max-width: 500px; margin: 0 auto 40px; }
+        .btn-view { display: inline-flex; align-items: center; gap: 12px; padding: 14px 32px; background: linear-gradient(135deg, #00d4ff, #0066ff); color: #000; border: none; border-radius: 100px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 20px rgba(0, 212, 255, 0.25); }
+        .btn-view:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0, 212, 255, 0.4); background: linear-gradient(135deg, #00b8d4, #0099cc); }
+        .reverse-psychology { max-width: 1200px; margin: 0 auto; padding: 40px; background: rgba(20, 20, 30, 0.8); border-radius: 16px; border: 1px solid #1a1a2e; }
+        .card-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        
+        .card { background: #161625; border: 1px solid #2a2a3e; border-radius: 12px; padding: 25px; cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden; }
+        .card:hover { border-color: #00d4ff; transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0, 212, 255, 0.15); }
+        
+        .card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, #00d4ff, #e600ff); opacity: 0; transition: opacity 0.3s; z-index: 0; pointer-events: none; }
+        .card.active::after { opacity: 0.15; }
+        .card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; color: #fff; position: relative; z-index: 2; }
+        
+        .card-body { font-size: 0.95rem; color: #bbb; line-height: 1.5; position: relative; z-index: 2; }
+        .card-body > p { transition: opacity 0.3s ease; }
+        .card.active .card-body > p { opacity: 0; }
+        
+        .card-reveal { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; opacity: 0; transform: translateY(10px); transition: all 0.3s; z-index: 3; }
+        .card.active .card-reveal { opacity: 1; transform: translateY(0); }
+        .card-reveal p { margin: 0; font-size: 0.95rem; color: #fff; font-weight: 500; }
+        
+        .skills-section { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+        .skills-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .skills-header h2 { font-size: 1.8rem; font-weight: 700; color: #fff; }
+        .skills-list { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+        .skill-pill { background: #1a1a2e; border: 1px solid #2a2a3e; border-radius: 8px; padding: 14px 20px; cursor: grab; transition: all 0.3s; font-size: 0.95rem; color: #ccc; user-select: none; }
+        .skill-pill:hover { border-color: #00d4ff; color: #fff; transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2); }
+        .skill-pill.dragging { opacity: 0.5; transform: scale(0.95); }
+        .skill-pill .pill-icon { display: inline-block; width: 24px; height: 24px; border-radius: 50%; background: #2a2a3e; margin-right: 8px; font-size: 0.8rem; vertical-align: middle; text-align: center; line-height: 24px; }
+        
+        .pill-java { background: #4a90d9; color: #fff; }
+        .pill-golang { background: #e600ff; color: #fff; }
+        .pill-cpp { background: #ff6b6b; color: #fff; }
+        .pill-python { background: #3776ab; color: #fff; }
+        .pill-sql { background: #f29111; color: #fff; }
+        .pill-js { background: #f7df1e; color: #000; }
+        .pill-springboot { background: #ffd93d; color: #000; }
+        .pill-kubernetes { background: #06d6a0; color: #000; }
+        .pill-docker { background: #7c5ce7; color: #fff; }
+        .pill-aws { background: #00d4ff; color: #000; }
+        .pill-n8n { background: #00b8d4; color: #000; }
+        .pill-gemini { background: #f97316; color: #fff; }
+        .pill-fastapi { background: #6366f1; color: #fff; }
+        .pill-techseso { background: #10b981; color: #fff; }
+        .pill-meta-youtube { background: #ef4444; color: #fff; }
+        .pill-systemdesign { background: #f59e0b; color: #000; }
+        
+        .sandbox { max-width: 800px; margin: 50px auto; background: #0d1117; border: 1px solid #1a1a2e; border-radius: 12px; overflow: hidden; }
+        .sandbox-header { padding: 20px 30px; background: #161625; border-bottom: 1px solid #2a2a3e; display: flex; justify-content: space-between; align-items: center; }
+        .terminal-window { height: 400px; background: #0d1117; border: 1px solid #2a2a3e; display: flex; flex-direction: column; overflow: hidden; }
+        .terminal-bar { padding: 12px 20px; background: #161625; border-bottom: 1px solid #2a2a3e; display: flex; justify-content: space-between; align-items: center; }
+        .terminal-project { padding: 15px; border-bottom: 1px solid #1a1a2e; }
+        .terminal-project h4 { margin-bottom: 8px; color: #fff; }
+        .terminal-line { padding: 8px 12px; font-family: "Courier New", monospace; font-size: 0.85rem; white-space: pre; border-left: 3px solid #00d4ff; }
+        .terminal-output { margin-top: 10px; padding: 10px; background: rgba(0,0,0,0.3); border-radius: 6px; font-family: "Courier New", monospace; color: #00d4ff; }
+        .projects-section { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px; }
+        .project-card { background: #161625; border: 1px solid #2a2a3e; border-radius: 12px; padding: 25px; transition: all 0.3s; display: flex; flex-direction: column; }
+        .project-card:hover { border-color: #00d4ff; transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0, 212, 255, 0.1); }
+        .project-card h3 { font-size: 1.2rem; color: #fff; margin-bottom: 12px; }
+        .project-card p { color: #888; font-size: 0.95rem; flex-grow: 1; }
+        .contact-section { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+        .contact-section h2 { text-align: center; margin-bottom: 30px; }
+        .social-links { display: flex; gap: 20px; justify-content: center; }
+        .social-links a { color: #f0f0f0; text-decoration: none; display: flex; align-items: center; justify-content: center; width: auto; padding: 10px 20px; border-radius: 8px; border: 1px solid #2a2a3e; transition: all 0.3s; font-weight: 600; }
+        .social-links a:hover { background: #0b0c10; color: #00d4ff; border-color: #00d4ff; }
+        .email-form { max-width: 600px; margin: 40px auto; padding: 30px; background: #161625; border-radius: 12px; }
+        .email-form h3 { margin-bottom: 20px; color: #fff; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; color: #ccc; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px 16px; background: #0d1117; border: 1px solid #2a2a3e; border-radius: 6px; color: #f0f0f0; font-family: inherit; resize: vertical; }
+        .form-group textarea { min-height: 150px; }
+        .submit-btn { width: 100%; padding: 15px; background: linear-gradient(135deg, #00d4ff, #0066ff); color: #000; border: none; border-radius: 100px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.3s; }
+        .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4); }
+        .footer { text-align: center; padding: 40px 20px; color: #666; font-size: 0.9rem; }
+        
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .card.active::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #00d4ff; z-index: 10; }
+        
+        @media (max-width: 768px) { 
+            .header-inner { padding: 15px 15px; flex-direction: column; gap: 15px; } 
+            .card-container { grid-template-columns: 1fr; } 
+            .terminal-window { height: 300px; } 
         }
     </style>
 </head>
 <body>
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-badge">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
-            Senior Developer | Full-Stack Engineer
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">UTKARSH PRIYAM</div>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
-        <h1 class="hero-title">Utkarsh Priyam</h1>
-        <p class="hero-subtitle">Senior Developer & Software Engineer | Building Modern Web Experiences</p>
-        <button class="btn-view" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17,8 12,3 7,8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-            View Projects
-        </button>
-        <button class="hero-cta" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get Started</button>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="about">
+        <div class="hero-badge">🚀 Full-Stack & AI Engineer</div>
+        <h1>I Build Things That Scale</h1>
+        <p class="hero-subtitle">Hyper-adaptive engineer who eats complex systems for breakfast. From Devo to Sprinklr, Citibank – I turn chaos into clean, deployable magic.</p>
+        <button class="btn-view" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">View My Work</button>
     </section>
 
-    <!-- PROJECTS SECTION -->
-    <section class="projects-section" id="projects">
-        <h2 style="text-align:center;color:#e0e0e0;margin-bottom:32px;">Featured Projects</h2>
-        <div class="projects-grid">
-            <article class="project-card">
-                <div class="card-icon" style="background: rgba(0,212,255,0.2); color: #00d4ff;">⚡</div>
-                <div class="project-info">
-                    <h3>E-Commerce API</h3>
-                    <p>RESTful API built with Node.js, Express, and PostgreSQL. Handles product catalog, cart management, and real-time inventory updates.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">Express</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                        <span class="tech-tag">WebSocket</span>
-                    </div>
+    <!-- REVERSE PSYCHOLOGY GRID -->
+    <section class="reverse-psychology">
+        <h2>Why you probably shouldn't hire me</h2>
+        <br>
+        <div class="card-container">
+            <div class="card active" id="card1">
+                <div class="card-title">You hate developers who actually understand AI.</div>
+                <div class="card-body">
+                    <p>If you just want a code monkey who drops basic HTML templates and shies away from n8n LLM orchestrations, Gemini integrations, or FastAPI data pipes, I'm definitely going to disappoint you.</p>
+                    <div class="card-reveal"><p>I build production-grade ML pipelines, orchestrate LLMs at scale, and integrate GenAI into real business logic. No fluff, just results.</p></div>
                 </div>
-            </article>
-            <article class="project-card">
-                <div class="card-icon" style="background: rgba(139,92,246,0.2); color: #8b5cf6;">🤖</div>
-                <div class="project-info">
-                    <h3>AI Dashboard</h3>
-                    <p>Interactive analytics dashboard powered by Python, TensorFlow, and D3.js. Visualizes real-time data streams with dynamic charts and insights.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">TensorFlow</span>
-                        <span class="tech-tag">D3.js</span>
-                        <span class="tech-tag">React</span>
-                    </div>
+            </div>
+            <div class="card" id="card2">
+                <div class="card-title">You think engineers shouldn't touch marketing.</div>
+                <div class="card-body">
+                    <p>I do Technical SEO, optimize conversion funnels, and run YouTube & Meta ad campaigns that actually convert. If you want a dev who builds in a vacuum and doesn't care if the product sells, look away.</p>
+                    <div class="card-reveal"><p>My portfolio includes growing organic traffic through data-driven ad strategies and SEO optimizations that drive real revenue. Marketing isn't a side hobby – it's part of the engineering DNA.</p></div>
                 </div>
-            </article>
-            <article class="project-card">
-                <div class="card-icon" style="background: rgba(34,197,94,0.2); color: #22c55e;">🔧</div>
-                <div class="project-info">
-                    <h3>Dev Portfolio Platform</h3>
-                    <p>A self-hosted portfolio site with static generation, Markdown support, and interactive components. Built with Vue.js and Tailwind-like styling.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Vue.js</span>
-                        <span class="tech-tag">Markdown</span>
-                        <span class="tech-tag">Tailwind CSS</span>
-                        <span class="tech-tag">Node.js</span>
-                    </div>
+            </div>
+            <div class="card" id="card3">
+                <div class="card-title">You prefer fragile, slow deployments.</div>
+                <div class="card-body">
+                    <p>I thrive on DevOps, Kubernetes, Docker, and AWS. I focus on fast prototyping and robust infrastructure. If you like your apps crashing on weekends or enjoy 3-month planning meetings for a color change, I'm not your guy.</p>
+                    <div class="card-reveal"><p>I ship resilient, scalable systems on day one. CI/CD pipelines that actually work, monitoring that catches issues before users feel them. Engineering excellence, delivered.</p></div>
                 </div>
-            </article>
+            </div>
+            <div class="card" id="card4">
+                <div class="card-title">You want a "Yes Man" who ignores bad architecture.</div>
+                <div class="card-body">
+                    <p>If you want someone to blindly stack frameworks without thinking about memory management, concurrency issues, or thread synchronization, we won't get along.</p>
+                    <div class="card-reveal"><p>I do low-level system design. I leverage the pillars of OOP and dive deep into Java/C++ memory allocation to ensure the foundation isn't built on sand. I will challenge bad architecture to make it scale.</p></div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- SKILLS SECTION -->
-    <section class="skills-section">
-        <h2 style="text-align:center;color:#e0e0e0;margin-bottom:32px;">Core Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-item">
-                <div class="skill-category">Frontend</div>
-                <h3>React & TypeScript</h3>
-                <p>Modern front-end development with component-driven architecture and type-safe APIs.</p>
+    <section class="skills-section" id="skills">
+        <div class="skills-header">
+            <h2>My Tech Stack (Drag & Drop Me)</h2>
+            <span>Reorder these skills – I respond to your moves!</span>
+        </div>
+        <div class="skills-list" id="skillsList">
+            <div class="skill-pill pill-java" draggable="true"><span class="pill-icon">⚙️</span> Java</div>
+            <div class="skill-pill pill-golang" draggable="true"><span class="pill-icon">🐹</span> Golang</div>
+            <div class="skill-pill pill-cpp" draggable="true"><span class="pill-icon">🔧</span> C++</div>
+            <div class="skill-pill pill-python" draggable="true"><span class="pill-icon">🐍</span> Python</div>
+            <div class="skill-pill pill-sql" draggable="true"><span class="pill-icon">🗄️</span> SQL/NoSQL</div>
+            <div class="skill-pill pill-js" draggable="true"><span class="pill-icon">⚡</span> JS/React</div>
+            <div class="skill-pill pill-springboot" draggable="true"><span class="pill-icon">🌱</span> Spring Boot</div>
+            <div class="skill-pill pill-kubernetes" draggable="true"><span class="pill-icon">☁️</span> Kubernetes</div>
+            <div class="skill-pill pill-docker" draggable="true"><span class="pill-icon">🐳</span> Docker</div>
+            <div class="skill-pill pill-aws" draggable="true"><span class="pill-icon">☁️</span> AWS</div>
+            <div class="skill-pill pill-n8n" draggable="true"><span class="pill-icon">🤖</span> n8n</div>
+            <div class="skill-pill pill-gemini" draggable="true"><span class="pill-icon">🧠</span> Gemini AI</div>
+            <div class="skill-pill pill-fastapi" draggable="true"><span class="pill-icon">🚀</span> FastAPI</div>
+            <div class="skill-pill pill-techseso" draggable="true"><span class="pill-icon">🔍</span> Technical SEO</div>
+            <div class="skill-pill pill-meta-youtube" draggable="true"><span class="pill-icon">📺</span> Meta/YouTube Ads</div>
+            <div class="skill-pill pill-systemdesign" draggable="true"><span class="pill-icon">🎨</span> System Design</div>
+        </div>
+        
+        <div class="sandbox">
+            <div class="sandbox-header">
+                <h3>Terminal Sandbox</h3>
+                <span>Drag skills here to rearrange</span>
             </div>
-            <div class="skill-item">
-                <div class="skill-category">Backend</div>
-                <h3>Node.js & GraphQL</h3>
-                <p>High-performance server-side logic with REST and GraphQL endpoints.</p>
+            <div class="terminal-window">
+                <div class="terminal-bar"><span>Project: AI-Powered Analytics Engine</span><span>Status: 🚀 Deploying</span></div>
+                <div class="terminal-project">
+                    <h4>AI-Powered Analytics Engine</h4>
+                    <div class="terminal-line">python 3.11 + FastAPI + n8n + AWS Lambda</div>
+                    <div class="terminal-line">Dockerized microservices with Kubernetes orchestration</div>
+                    <div class="terminal-line">Technical SEO optimized landing page</div>
+                    <div class="terminal-line">Meta Ad campaign driving 3x CTR</div>
+                </div>
+                <div class="terminal-output">
+                    <p>System initialized. Starting ML pipeline...</p>
+                    <p>Deploying to staging cluster...</p>
+                    <p>All services healthy. Ready for production.</p>
+                </div>
             </div>
-            <div class="skill-item">
-                <div class="skill-category">DevOps</div>
-                <h3>Kubernetes & Docker</h3>
-                <p>Container orchestration, CI/CD pipelines, and cloud deployment strategies.</p>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="projects-section" id="projects">
+        <h2>Selected Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Devo Platform Integration</h3>
+                <p>Built a full-stack integration connecting Devo analytics with custom ML models. Engineered real-time data dashboards powered by n8n and FastAPI.</p>
             </div>
-            <div class="skill-item">
-                <div class="skill-category">Tools</div>
-                <h3>Figma & GitHub</h3>
-                <p>UI/UX design collaboration and version-controlled code sharing.</p>
+            <div class="project-card">
+                <h3>Citibank AI Risk Model</h3>
+                <p>Developed and trained a sophisticated fraud detection system using Python, TensorFlow, and AWS SageMaker. Successfully reduced false positives by 40%.</p>
+            </div>
+            <div class="project-card">
+                <h3>Spring Boot Microservice Suite</h3>
+                <p>Architected and deployed a highly concurrent set of RESTful services in Go and Java, fully orchestrated with Kubernetes and Prometheus monitoring.</p>
+            </div>
+            <div class="project-card">
+                <h3>Gemini AI Workout Tracker</h3>
+                <p>Engineered a custom two-part Gemini AI automation agent integrated with Google Sheets to intelligently track, log, and analyze physical gym sets and progressive overload data.</p>
+            </div>
+            <div class="project-card">
+                <h3>AI News Intelligence Pipeline</h3>
+                <p>Architected a fully automated multi-agent news curation system using n8n and Python to seamlessly aggregate, summarize, and deliver specific daily digests from vast media sources.</p>
             </div>
         </div>
     </section>
 
     <!-- CONTACT SECTION -->
     <section class="contact-section" id="contact">
-        <div class="contact-container">
-            <div class="contact-info">
-                <h2>Get In Touch</h2>
-                <p>Feel free to reach out for collaborations, projects, or feedback.</p>
-                <div class="social-links">
-                    <a href="https://github.com" target="_blank" rel="noopener" class="social-link">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-                        GitHub
-                    </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        LinkedIn
-                    </a>
-                    <a href="mailto:utkarsh@example.com" class="social-link">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        Email
-                    </a>
-                </div>
-                <form class="email-form" onsubmit="event.preventDefault(); alert('Message sent! (Demo)'); this.reset()">
-                    <h3>Send a Message</h3>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input id="name" type="text" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input id="email" type="email" placeholder="you@example.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" rows="4" placeholder="Tell me about your project..." required></textarea>
-                    </div>
-                    <button class="submit-btn" type="submit">Send Message</button>
-                </form>
-            </div>
+        <h2>Get In Touch</h2>
+        <p style="text-align:center; margin-bottom: 20px;">Ready to build something amazing together?</p>
+        <div class="social-links">
+            <a href="https://github.com/utkarshpriyam" target="_blank" rel="noopener" class="social-link">GitHub</a>
+            <a href="https://linkedin.com/in/utkarshpriyam" target="_blank" rel="noopener" class="social-link">LinkedIn</a>
+            <a href="https://fiverr.com/askpriyam" target="_blank" rel="noopener" class="social-link">Fiverr</a>
         </div>
+        
+        <form class="email-form" onsubmit="event.preventDefault(); alert('Message sent! (Demo)'); this.reset()">
+            <h3>Send a Message</h3>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="you@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="4" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button class="submit-btn" type="submit">Send Message</button>
+        </form>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <p>&copy; 2026 Utkarsh Priyam. All rights reserved.</p>
     </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // === REVERSE PSYCHOLOGY CARDS ===
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                cards.forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+            });
+        });
+
+        // === DRAG AND DROP FOR SKILL PILLS ===
+        const skillPills = document.querySelectorAll('.skill-pill[draggable]');
+        let draggedPill = null;
+
+        skillPills.forEach(pill => {
+            pill.addEventListener('dragstart', (e) => {
+                draggedPill = pill;
+                pill.classList.add('dragging');
+                e.dataTransfer.effectAllowed = 'move';
+                e.dataTransfer.setData('text/plain', pill.id || pill.textContent.trim());
+            });
+            pill.addEventListener('dragend', () => {
+                pill.classList.remove('dragging');
+                draggedPill = null;
+            });
+        });
+
+        // Allow dropping on skills list for reordering
+        const skillsList = document.getElementById('skillsList');
+        skillsList.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'move';
+        });
+        skillsList.addEventListener('drop', (e) => {
+            e.preventDefault();
+            if (draggedPill) {
+                const afterElement = getDragAfterElement(skillsList, e.clientY);
+                if (afterElement == null) {
+                    skillsList.appendChild(draggedPill);
+                } else {
+                    skillsList.insertBefore(draggedPill, afterElement);
+                }
+            }
+        });
+
+        function getDragAfterElement(container, y) {
+            const draggableElements = [...container.querySelectorAll('.skill-pill:not(.dragging)')];
+            return draggableElements.reduce((closest, child) => {
+                const box = child.getBoundingClientRect();
+                const offset = y - box.top - box.height / 2;
+                if (offset < 0 && offset > closest.offset) {
+                    return { offset: offset, element: child };
+                } else {
+                    return closest;
+                }
+            }, { offset: Number.NEGATIVE_INFINITY }).element;
+        }
+
+        // === MAGNETIC CURSOR FOLLOWER ===
+        const cursorEl = document.createElement('div');
+        cursorEl.id = 'cursorFollower';
+        cursorEl.style.cssText = `
+            position: fixed;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: rgba(0, 212, 255, 0.6);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.1s, height 0.1s, background 0.2s, box-shadow 0.2s;
+        `;
+        document.body.appendChild(cursorEl);
+
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // Hover growth on interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, .card, .skill-pill, .project-card, .btn-view, .submit-btn');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorEl.style.width = '40px';
+                cursorEl.style.height = '40px';
+                cursorEl.style.background = 'rgba(0, 212, 255, 0.8)';
+                cursorEl.style.boxShadow = '0 0 30px rgba(0, 212, 255, 0.8)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorEl.style.width = '24px';
+                cursorEl.style.height = '24px';
+                cursorEl.style.background = 'rgba(0, 212, 255, 0.6)';
+                cursorEl.style.boxShadow = '0 0 20px rgba(0, 212, 255, 0.6)';
+            });
+        });
+
+        function animateCursor() {
+            cursorX += (mouseX - cursorX) * 0.15;
+            cursorY += (mouseY - cursorY) * 0.15;
+            cursorEl.style.left = cursorX + 'px';
+            cursorEl.style.top = cursorY + 'px';
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+    </script>
 </body>
 </html>
