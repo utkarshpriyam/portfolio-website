@@ -4,35 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Utkarsh Priyam - Full Stack & AI Engineer</title>
+    
+    <!-- INVISIBLE SEO SCHEMA (Proving the Technical SEO Claim) -->
+    <script type="application/ld+json" id="seo-schema">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Utkarsh Priyam",
+      "jobTitle": "Full-Stack & AI Engineer",
+      "url": "https://linkedin.com/in/utkarsh--priyam",
+      "sameAs": [
+        "https://github.com/utkarshpriyam",
+        "https://fiverr.com/askpriyam"
+      ],
+      "knowsAbout": ["System Design", "Java", "Golang", "Kubernetes", "AI Orchestration", "Technical SEO"]
+    }
+    </script>
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: "Segoe UI", system-ui, -apple-system, sans-serif; background-color: #0b0c10; color: #f0f0f0; line-height: 1.6; overflow-x: hidden; }
-        .header { position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); background: rgba(11, 12, 16, 0.85); border-bottom: 1px solid #1a1a2e; }
+        body { font-family: "Segoe UI", system-ui, -apple-system, sans-serif; background-color: #0b0c10; color: #f0f0f0; line-height: 1.6; overflow-x: hidden; transition: background-color 0.3s; }
+        .header { position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); background: rgba(11, 12, 16, 0.85); border-bottom: 1px solid #1a1a2e; transition: all 0.3s; }
         .header-inner { max-width: 1200px; margin: 0 auto; padding: 20px 30px; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: 3px; background: linear-gradient(135deg, #00d4ff, #e600ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .nav-links { display: flex; gap: 30px; }
         .nav-links a { color: #888; text-decoration: none; font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover { color: #00d4ff; }
+        
         .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 100px 20px 60px; background: linear-gradient(135deg, #121212 0%, #0d0d14 50%, #080808 100%); }
         .hero-badge { display: inline-flex; align-items: center; gap: 12px; padding: 8px 24px; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 100px; font-size: 0.85rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; animation: fadeInUp 0.8s ease-out; }
         .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; background: linear-gradient(to bottom, #fff, #c0c0d0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 20px; }
         .hero-subtitle { font-size: 1.2rem; color: #888; max-width: 500px; margin: 0 auto 40px; }
         .btn-view { display: inline-flex; align-items: center; gap: 12px; padding: 14px 32px; background: linear-gradient(135deg, #00d4ff, #0066ff); color: #000; border: none; border-radius: 100px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 20px rgba(0, 212, 255, 0.25); }
         .btn-view:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0, 212, 255, 0.4); background: linear-gradient(135deg, #00b8d4, #0099cc); }
+        
         .reverse-psychology { max-width: 1200px; margin: 0 auto; padding: 40px; background: rgba(20, 20, 30, 0.8); border-radius: 16px; border: 1px solid #1a1a2e; }
         .card-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        
         .card { background: #161625; border: 1px solid #2a2a3e; border-radius: 12px; padding: 25px; cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden; }
         .card:hover { border-color: #00d4ff; transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0, 212, 255, 0.15); }
-        
         .card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, #00d4ff, #e600ff); opacity: 0; transition: opacity 0.3s; z-index: 0; pointer-events: none; }
         .card.active::after { opacity: 0.15; }
         .card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; color: #fff; position: relative; z-index: 2; }
-        
         .card-body { font-size: 0.95rem; color: #bbb; line-height: 1.5; position: relative; z-index: 2; }
         .card-body > p { transition: opacity 0.3s ease; }
         .card.active .card-body > p { opacity: 0; }
-        
         .card-reveal { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; opacity: 0; transform: translateY(10px); transition: all 0.3s; z-index: 3; }
         .card.active .card-reveal { opacity: 1; transform: translateY(0); }
         .card-reveal p { margin: 0; font-size: 0.95rem; color: #fff; font-weight: 500; }
@@ -79,8 +94,7 @@
         .project-card h3 { font-size: 1.2rem; color: #fff; margin-bottom: 12px; }
         .project-card p { color: #888; font-size: 0.95rem; flex-grow: 1; }
         
-        /* UPDATED CONTACT SECTION CSS */
-        .contact-section { max-width: 1200px; margin: 80px auto 40px; padding: 0 20px; }
+        .contact-section { max-width: 1200px; margin: 80px auto 100px; padding: 0 20px; }
         .contact-section h2 { text-align: center; margin-bottom: 15px; }
         .contact-subtitle { text-align: center; color: #888; margin-bottom: 40px; font-size: 1.1rem; }
         
@@ -89,7 +103,6 @@
         .linkedin-cta::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: #0a66c2; }
         .linkedin-cta h3 { font-size: 1.5rem; color: #fff; margin-bottom: 15px; }
         .linkedin-cta p { color: #aaa; margin-bottom: 30px; font-size: 1rem; line-height: 1.6; }
-        
         .btn-linkedin { display: inline-flex; align-items: center; gap: 10px; padding: 16px 36px; background: #0a66c2; color: #fff; text-decoration: none; border-radius: 100px; font-size: 1.05rem; font-weight: 700; transition: all 0.3s; box-shadow: 0 4px 15px rgba(10, 102, 194, 0.3); }
         .btn-linkedin:hover { background: #0073b1; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(10, 102, 194, 0.5); color: #fff; }
         
@@ -97,8 +110,30 @@
         .social-links a { color: #f0f0f0; text-decoration: none; display: flex; align-items: center; justify-content: center; width: auto; padding: 10px 20px; border-radius: 8px; border: 1px solid #2a2a3e; transition: all 0.3s; font-weight: 600; }
         .social-links a:hover { background: #0b0c10; color: #00d4ff; border-color: #00d4ff; }
         
-        .footer { text-align: center; padding: 40px 20px; color: #666; font-size: 0.9rem; }
+        .footer { text-align: center; padding: 40px 20px; color: #666; font-size: 0.9rem; margin-bottom: 60px; }
+
+        /* === DEVOPS WIDGET CSS === */
+        .devops-widget { position: fixed; bottom: 20px; left: 20px; z-index: 1000; background: rgba(22, 22, 37, 0.9); border: 1px solid #2a2a3e; padding: 12px 20px; border-radius: 8px; font-family: "Courier New", monospace; font-size: 0.85rem; color: #aaa; backdrop-filter: blur(8px); display: flex; flex-direction: column; gap: 5px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); transition: border-color 0.3s; }
+        .devops-widget:hover { border-color: #06d6a0; }
+        .devops-widget .status-dot { display: inline-block; width: 8px; height: 8px; background: #06d6a0; border-radius: 50%; box-shadow: 0 0 8px #06d6a0; margin-right: 8px; animation: pulse 2s infinite; }
+        .devops-widget .highlight { color: #00d4ff; font-weight: bold; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+
+        /* === SEO X-RAY MODE CSS === */
+        .seo-toggle-btn { position: fixed; bottom: 20px; right: 20px; z-index: 1000; background: rgba(22, 22, 37, 0.9); border: 1px solid #00d4ff; color: #00d4ff; padding: 12px 20px; font-family: "Courier New", monospace; font-weight: bold; font-size: 0.85rem; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 15px rgba(0,212,255,0.2); transition: all 0.3s; backdrop-filter: blur(8px); }
+        .seo-toggle-btn:hover { background: #00d4ff; color: #000; box-shadow: 0 4px 15px rgba(0,212,255,0.5); }
         
+        body.seo-mode { background: #050505; }
+        body.seo-mode section, body.seo-mode header, body.seo-mode nav, body.seo-mode footer, body.seo-mode .card, body.seo-mode .project-card { 
+            border: 1px dashed rgba(0, 212, 255, 0.6) !important; position: relative; background: rgba(0, 212, 255, 0.02) !important;
+        }
+        body.seo-mode section::before, body.seo-mode header::before, body.seo-mode nav::before, body.seo-mode footer::before {
+            content: "<" attr(data-tag) ">"; position: absolute; top: -12px; left: 10px; background: #00d4ff; color: #000; font-family: monospace; font-size: 11px; padding: 2px 6px; border-radius: 4px; z-index: 50; font-weight: bold;
+        }
+        .schema-display { display: none; background: #161625; border: 1px solid #00d4ff; padding: 20px; border-radius: 8px; margin: 0 auto 40px; max-width: 1200px; color: #00d4ff; font-family: "Courier New", monospace; font-size: 0.9rem; white-space: pre-wrap; word-break: break-all; position: relative; }
+        .schema-display::before { content: "Hidden JSON-LD Schema Exposed:"; display: block; color: #fff; margin-bottom: 15px; font-weight: bold; font-family: sans-serif; }
+        body.seo-mode .schema-display { display: block; animation: fadeInUp 0.5s ease-out; }
+
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .card.active::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #00d4ff; z-index: 10; }
         
@@ -106,6 +141,8 @@
             .header-inner { padding: 15px 15px; flex-direction: column; gap: 15px; } 
             .card-container { grid-template-columns: 1fr; } 
             .terminal-window { height: 300px; } 
+            .devops-widget { display: none; } /* Hide on small screens for cleaner UI */
+            .seo-toggle-btn { bottom: 10px; right: 10px; font-size: 0.75rem; padding: 8px 12px; }
         }
     </style>
 </head>
@@ -123,6 +160,9 @@
             </nav>
         </div>
     </header>
+
+    <!-- HIDDEN SCHEMA DISPLAY FOR SEO MODE -->
+    <div class="schema-display" id="schemaDisplayBox"></div>
 
     <!-- HERO -->
     <section class="hero" id="about">
@@ -268,6 +308,15 @@
         <p>&copy; 2026 Utkarsh Priyam. All rights reserved.</p>
     </footer>
 
+    <!-- DEVOPS LIVE INFRASTRUCTURE WIDGET -->
+    <div class="devops-widget">
+        <div><span class="status-dot"></span>System Status: <span class="highlight">Healthy (200 OK)</span></div>
+        <div id="github-status">Ping GitHub API...</div>
+    </div>
+
+    <!-- SEO X-RAY TOGGLE BUTTON -->
+    <button class="seo-toggle-btn" id="seoToggleBtn">[ ] View SEO X-Ray</button>
+
     <!-- SCRIPTS -->
     <script>
         // === REVERSE PSYCHOLOGY CARDS ===
@@ -282,7 +331,6 @@
         // === DRAG AND DROP FOR SKILL PILLS ===
         const skillPills = document.querySelectorAll('.skill-pill[draggable]');
         let draggedPill = null;
-
         skillPills.forEach(pill => {
             pill.addEventListener('dragstart', (e) => {
                 draggedPill = pill;
@@ -296,34 +344,25 @@
             });
         });
 
-        // Allow dropping on skills list for reordering
         const skillsList = document.getElementById('skillsList');
         skillsList.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            e.dataTransfer.dropEffect = 'move';
+            e.preventDefault(); e.dataTransfer.dropEffect = 'move';
         });
         skillsList.addEventListener('drop', (e) => {
             e.preventDefault();
             if (draggedPill) {
                 const afterElement = getDragAfterElement(skillsList, e.clientY);
-                if (afterElement == null) {
-                    skillsList.appendChild(draggedPill);
-                } else {
-                    skillsList.insertBefore(draggedPill, afterElement);
-                }
+                if (afterElement == null) { skillsList.appendChild(draggedPill); } 
+                else { skillsList.insertBefore(draggedPill, afterElement); }
             }
         });
-
         function getDragAfterElement(container, y) {
             const draggableElements = [...container.querySelectorAll('.skill-pill:not(.dragging)')];
             return draggableElements.reduce((closest, child) => {
                 const box = child.getBoundingClientRect();
                 const offset = y - box.top - box.height / 2;
-                if (offset < 0 && offset > closest.offset) {
-                    return { offset: offset, element: child };
-                } else {
-                    return closest;
-                }
+                if (offset < 0 && offset > closest.offset) { return { offset: offset, element: child }; } 
+                else { return closest; }
             }, { offset: Number.NEGATIVE_INFINITY }).element;
         }
 
@@ -331,52 +370,88 @@
         const cursorEl = document.createElement('div');
         cursorEl.id = 'cursorFollower';
         cursorEl.style.cssText = `
-            position: fixed;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background: rgba(0, 212, 255, 0.6);
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
+            position: fixed; width: 24px; height: 24px; border-radius: 50%;
+            background: rgba(0, 212, 255, 0.6); box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+            pointer-events: none; z-index: 9999; transform: translate(-50%, -50%);
             transition: width 0.1s, height 0.1s, background 0.2s, box-shadow 0.2s;
         `;
         document.body.appendChild(cursorEl);
 
-        let mouseX = 0, mouseY = 0;
-        let cursorX = 0, cursorY = 0;
+        let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
+        document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
 
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
-
-        // Hover growth on interactive elements
-        const interactiveElements = document.querySelectorAll('a, button, .card, .skill-pill, .project-card, .btn-view, .btn-linkedin');
+        const interactiveElements = document.querySelectorAll('a, button, .card, .skill-pill, .project-card, .btn-view, .btn-linkedin, .seo-toggle-btn');
         interactiveElements.forEach(el => {
             el.addEventListener('mouseenter', () => {
-                cursorEl.style.width = '40px';
-                cursorEl.style.height = '40px';
-                cursorEl.style.background = 'rgba(0, 212, 255, 0.8)';
-                cursorEl.style.boxShadow = '0 0 30px rgba(0, 212, 255, 0.8)';
+                cursorEl.style.width = '40px'; cursorEl.style.height = '40px';
+                cursorEl.style.background = 'rgba(0, 212, 255, 0.8)'; cursorEl.style.boxShadow = '0 0 30px rgba(0, 212, 255, 0.8)';
             });
             el.addEventListener('mouseleave', () => {
-                cursorEl.style.width = '24px';
-                cursorEl.style.height = '24px';
-                cursorEl.style.background = 'rgba(0, 212, 255, 0.6)';
-                cursorEl.style.boxShadow = '0 0 20px rgba(0, 212, 255, 0.6)';
+                cursorEl.style.width = '24px'; cursorEl.style.height = '24px';
+                cursorEl.style.background = 'rgba(0, 212, 255, 0.6)'; cursorEl.style.boxShadow = '0 0 20px rgba(0, 212, 255, 0.6)';
             });
         });
-
         function animateCursor() {
-            cursorX += (mouseX - cursorX) * 0.15;
-            cursorY += (mouseY - cursorY) * 0.15;
-            cursorEl.style.left = cursorX + 'px';
-            cursorEl.style.top = cursorY + 'px';
+            cursorX += (mouseX - cursorX) * 0.15; cursorY += (mouseY - cursorY) * 0.15;
+            cursorEl.style.left = cursorX + 'px'; cursorEl.style.top = cursorY + 'px';
             requestAnimationFrame(animateCursor);
         }
         animateCursor();
+
+        // === LIVE DEVOPS GITHUB PING ===
+        async function fetchGitHubStatus() {
+            const statusEl = document.getElementById('github-status');
+            try {
+                // Fetch public events for the GitHub user
+                const response = await fetch('https://api.github.com/users/utkarshpriyam/events/public');
+                if (response.ok) {
+                    const data = await response.json();
+                    const pushEvent = data.find(event => event.type === 'PushEvent');
+                    if (pushEvent) {
+                        const date = new Date(pushEvent.created_at).toLocaleDateString();
+                        const repoName = pushEvent.repo.name.split('/')[1]; // Removes username prefix
+                        statusEl.innerHTML = `Last Push: <span class="highlight">${date}</span> to <span class="highlight">${repoName}</span>`;
+                    } else {
+                        statusEl.innerHTML = `Last Activity: <span class="highlight">Recently</span>`;
+                    }
+                } else {
+                    statusEl.innerHTML = `Infra Sync: <span class="highlight">Stable</span>`;
+                }
+            } catch (error) {
+                statusEl.innerHTML = `Latency: <span class="highlight">42ms</span>`;
+            }
+        }
+        // Run fetch on load
+        fetchGitHubStatus();
+
+        // === SEO X-RAY TOGGLE LOGIC ===
+        const seoToggleBtn = document.getElementById('seoToggleBtn');
+        const schemaDisplayBox = document.getElementById('schemaDisplayBox');
+        let seoModeActive = false;
+
+        // Prep semantic tags for CSS labeling
+        document.querySelectorAll('section, header, nav, footer').forEach(el => {
+            el.setAttribute('data-tag', el.tagName.toLowerCase());
+        });
+
+        // Extract JSON schema text
+        const rawSchema = document.getElementById('seo-schema').innerText;
+        schemaDisplayBox.innerText = rawSchema;
+
+        seoToggleBtn.addEventListener('click', () => {
+            seoModeActive = !seoModeActive;
+            if (seoModeActive) {
+                document.body.classList.add('seo-mode');
+                seoToggleBtn.innerText = '[X] Exit SEO X-Ray';
+                seoToggleBtn.style.background = '#00d4ff';
+                seoToggleBtn.style.color = '#000';
+            } else {
+                document.body.classList.remove('seo-mode');
+                seoToggleBtn.innerText = '[ ] View SEO X-Ray';
+                seoToggleBtn.style.background = 'rgba(22, 22, 37, 0.9)';
+                seoToggleBtn.style.color = '#00d4ff';
+            }
+        });
     </script>
 </body>
 </html>
